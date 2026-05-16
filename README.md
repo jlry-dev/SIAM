@@ -1,1 +1,1 @@
-# School---SIAM---CI-CD-Upgrade---Activity
+# School---SIAM---Activity
