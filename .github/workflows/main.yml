@@ -1,0 +1,39 @@
+name: CI/CD Deploy
+
+on:
+  push:
+    branches:
+      - main  # runs deployment on main push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Download dependencies
+        run: go mod download
+
+      - name: Run tests
+        run: go test ./...
+
+      - name: Build app
+        run: go build -o app .
+
+      - name: Start server
+        env:
+          PORT: 8080
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}  # optional if you want a real DB
+        run: |
+          ./app &
+          sleep 10
+
+      - name: Smoke test
+        run: curl -f http://localhost:8080/health || exit 1
