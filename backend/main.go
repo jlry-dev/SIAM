@@ -13,10 +13,11 @@ import (
 	"strconv"
 	"strings"
 	"syscall"
+	"battleship-backend/config"
 )
 
 // loadEnv parses the .env file.
-func loadEnv() {
+func LoadEnv() {
 	b, err := os.ReadFile(".env")
 	if err != nil {
 		// totally fine if it doesn't exist, might be set in docker or whatever
@@ -37,7 +38,7 @@ func loadEnv() {
 
 func main() {
 	// 1. load the env file
-	loadEnv()
+	config.LoadEnv()
 
 	// 2. read configs
 	port := os.Getenv("PORT")
