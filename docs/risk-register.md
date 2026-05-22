@@ -17,3 +17,5 @@
 | R6 | Merge conflicts in GitHub | 3 | 3 | 9 | Use feature branches and review PRs carefully | Team Lead |
 | R7 | Delays due to unfinished tasks | 4 | 3 | 12 | Assign tasks clearly and track sprint progress | Scrum Master |
 | R8 | UI bugs affecting gameplay | 3 | 3 | 9 | Perform regular testing before merges | QA Tester |
+| R9 | Unauthorized API access | 4 | 5 | 20 | Add API authentication middleware | Backend Developer |
+| R10 | Invalid client payloads | 3 | 4 | 12 | Validate JSON requests before processing | Backend Developer |
