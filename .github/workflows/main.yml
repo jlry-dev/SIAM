@@ -32,7 +32,7 @@ jobs:
           PORT: 8080
           DATABASE_URL: ${{ secrets.DATABASE_URL }}  # optional if you want a real DB
         run: |
-          ./app &
+          ./backend/app &
           sleep 10
 
       - name: Smoke test
