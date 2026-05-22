@@ -39,4 +39,4 @@ jobs:
           sleep 10
 
       - name: Smoke test
-        run: curl -f https://battle-ship-one-livid.vercel.app/health || exit 1
+        run: curl -f http://closed-sile-jlry-personal-0722a904.koyeb.app/health || exit 1
